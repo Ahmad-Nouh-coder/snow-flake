@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            /* background-color: darkblue; */
+            background-image: url('pexels-photo-730256.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 800px;
+            margin-top: 50px;
+            /* margin-bottom: 20px; */
+        }
+        body{
+            background-color: rgb(33, 90, 107);
+        }
+        button{
+            background-color: aqua;
+            color: rgb(26, 138, 110);
+        }
+        .snowflake{
+            font-size: 5rem;
+            color:white;
+            position: fixed;
+            top: 0%;
+            animation-name: fall;
+            animation-iteration-count: infinite;
+            animation-duration: 8s;
+            animation-timing-function: cubic-bezier(.65,.11,.29,.65);/*cubic-bezier(.65,.11,.29,.65)*/
+         
+        }
+        @keyframes fall {
+            from{
+                top: 5%;
+            }
+            to{
+                top: 85%; 
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <main>
+    <button>press for more flakes </button>
+    <section id="sky">
+        <span class="snowflake">*</span>
+    </section>
+    <script>
+    
+        
+        
+       document.querySelector('button').addEventListener('click',function(){
+        const falls =document.createElement('span');
+        falls.classList.add('snowflake')
+        document.querySelector("#sky").append(falls);
+        falls.style.left= Math.random()* 100 + "%" ;
+      
+       falls.innerText = ' * ' ;
+     
+
+
+        })
+    
+    </script>
+
+</main>
+</body>
+</html>
